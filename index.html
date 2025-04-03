@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Audio Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webm-writer/0.2.0/webm-writer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <h1>Islamic Audio Visualizer</h1>
+    <input type="file" id="audioInput" accept="audio/*">
+    <div id="controls">
+      <label for="styleSelect">Visual Style:</label>
+      <select id="styleSelect">
+        <option value="geometric">Geometric Focus</option>
+        <option value="light">Light Effects Focus</option>
+        <option value="calligraphy">Calligraphy Focus</option>
+      </select>
+      <label for="colorSelect">Color Palette:</label>
+      <select id="colorSelect">
+        <option value="default">Default (Blue/Green/Gold)</option>
+        <option value="earthy">Earthy Tones</option>
+        <option value="cool">Cool Blues</option>
+      </select>
+      <div id="swatches">
+        <span class="swatch" data-palette="default"></span>
+        <span class="swatch" data-palette="earthy"></span>
+        <span class="swatch" data-palette="cool"></span>
+      </div>
+      <label for="sensitivity">Sensitivity:</label>
+      <input type="range" id="sensitivity" min="0.5" max="2" step="0.1" value="1">
+    </div>
+    <div id="download-controls">
+      <button id="start-recording" class="download-btn">Start Recording</button>
+      <button id="stop-recording" class="download-btn" disabled>Stop Recording</button>
+      <select id="aspect-ratio" class="aspect-select">
+        <option value="landscape">Landscape (16:9)</option>
+        <option value="portrait">Portrait (9:16)</option>
+      </select>
+      <div id="recording-status"></div>
+    </div>
+    <div id="canvas"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+        if (typeof CCapture === 'undefined') {
+            console.error('CCapture failed to load');
+            document.getElementById('recording-status').textContent = 
+                'Error: Recording library not loaded';
+        } else {
+            console.log('CCapture loaded successfully');
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    background: #1a2b3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  #container {
+    text-align: center;
+    padding: 20px;
+  }
+  h1 {
+    color: #d4af37;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  #audioInput {
+    margin: 20px;
+    padding: 10px 20px;
+    background: #10B981;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #audioInput:hover {
+    background: #059669;
+  }
+  #controls {
+    margin: 20px 0;
+    color: #d4af37;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  #controls label {
+    margin-right: 10px;
+  }
+  #controls select, #controls input {
+    padding: 5px;
+    background: #0f172a;
+    color: #fff;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+  }
+  #swatches {
+    display: flex;
+    gap: 10px;
+  }
+  .swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #d4af37;
+  }
+  .swatch[data-palette="default"] {
+    background: linear-gradient(45deg, #1e4076, #10B981, #d4af37);
+  }
+  .swatch[data-palette="earthy"] {
+    background: linear-gradient(45deg, #57412f, #8b7765, #b8860b);
+  }
+  .swatch[data-palette="cool"] {
+    background: linear-gradient(45deg, #225378, #4682b4, #87ceeb);
+  }
+  #canvas {
+    width: 800px;
+    height: 600px;
+    background: #0f172a;
+    border: 2px solid #d4af37;
+    border-radius: 5px;
+  }
+
+  #download-controls {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .download-btn {
+    background: #10B981;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .download-btn:hover:not(:disabled) {
+    background: #059669;
+  }
+
+  .download-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .aspect-select {
+    padding: 8px;
+    border-radius: 5px;
+    background: #0f172a;
+    color: #fff;
+    border: 1px solid #d4af37;
+  }
+
+  #recording-status {
+    color: #d4af37;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 600px) {
+    #download-controls {
+        flex-direction: column;
+    }
+  }
